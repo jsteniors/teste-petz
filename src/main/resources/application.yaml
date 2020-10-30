@@ -1,0 +1,28 @@
+server:
+  servlet:    context-path: /petz/v1
+  port: ${SERVER_PORT:8080}
+
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2
+      settings:
+        web-allow-others: true 
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: ${PETZ_DB_URL:jdbc:h2:mem:petz-test}
+    username: ${PETZ_DB_USERNAME:sa}
+    password: ${PETZ_DB_PASSWORD:}
+    hikari:
+      connectionTimeout: ${DATASOURCE_MAX_LIFETIME:3000}
+      minimum-idle: 1
+      maximum-pool-size: ${DATASOURCE_MAXIMUM_POOL_SIZE:5}
+      idle-timeout: ${DATASOURCE_IDLE_TIMEOUT:5000}
+      max-lifetime: ${DATASOURCE_MAX_LIFETIME:1000}
+      auto-commit: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+    show-sql: false
