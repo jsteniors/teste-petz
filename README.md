@@ -36,4 +36,4 @@ Para as entidades
 
 ## Test
 ###Test using Swagger-UI local
-![swagger-ui](http://localhost:8080/petz/v1/swagger-ui.html)
+- [Swagger Local](http://localhost:8080/petz/v1/swagger-ui.html)
